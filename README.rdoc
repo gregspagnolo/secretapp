@@ -1,0 +1,3 @@
+== README
+
+Secret App- Anonymously post secrets and have other users like it- SPOOKY
