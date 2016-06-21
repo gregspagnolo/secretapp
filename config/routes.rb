@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :sessions
   resources :secrets
 
+  post '/likes/' => 'likes#create'
+  delete '/likes/:id' => 'likes#destroy'
 
   # get '/users/:id' => 'users#show'
   # get '/sessions/new' => 'sessions#new'

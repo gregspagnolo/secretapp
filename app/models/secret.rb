@@ -3,5 +3,9 @@ class Secret < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :users_liked, through: :likes, source: :user
 
+  def find_like_id current_user
+  	Like.select(:id).where(user: current_user, secret: self)[0].id
+  end
+
   validates :content, presence: true
 end

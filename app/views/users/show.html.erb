@@ -18,4 +18,10 @@
 	<% @secret.each do |s| %>
 		<p><%= s.content %><button><a href="/secrets/<%= s.id %>" data-method='delete'>Delete</a></button></p>
 		<p><%= s.likes.count %> likes </p>
+		<p>
+			<form action="/likes" method="post">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				<input type="hidden" name="secret_id" value="<%= s.id %>">
+				<button type="submit">Like</button>
+			</form>
 	<% end %>
